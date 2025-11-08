@@ -4,25 +4,19 @@
     <title><%= project.title %> - Climate Solutions</title>
   </head>
   <body class="min-h-screen bg-base-100 text-base-content">
+    <link rel="stylesheet" href="/css/main.css" />
     <%- include('partials/navbar') %>
-
-    <div class="container mx-auto p-6">
-      <!-- Hero -->
-      <div class="hero bg-base-200 rounded-2xl shadow-md mb-10">
-        <div class="hero-content text-center">
-          <div class="max-w-2xl">
-            <h1 class="text-5xl font-bold mb-4"><%= project.title %></h1>
-            <p class="mb-6">
-              Below, you will find detailed information about the project:
-              <strong><%= project.title %></strong>
+    <div class="hero bg-base-200 min-h-screen">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">404</h1>
+          <p class="py-6">Unable to find requested project</p>
+              
             </p>
           </div>
         </div>
       </div>
-
-      <!-- Project Details -->
       <div class="max-w-4xl mx-auto">
-        <!-- Feature Image -->
         <div class="mb-8">
           <img
             src="<%= project.feature_img_url %>"
@@ -30,112 +24,20 @@
             class="rounded-2xl shadow-lg w-full"
           />
         </div>
-
-        <!-- Introduction -->
         <div class="card bg-base-200 shadow-xl mb-6">
           <div class="card-body">
             <h2 class="card-title text-2xl">Introduction</h2>
             <p class="leading-relaxed"><%= project.intro_short %></p>
           </div>
         </div>
-
-        <!-- Impact -->
         <div class="card bg-base-200 shadow-xl mb-6">
           <div class="card-body">
             <h2 class="card-title text-2xl">Impact</h2>
             <p class="leading-relaxed"><%= project.impact %></p>
           </div>
         </div>
-
-        <!-- Original Source -->
-        <div class="card bg-base-200 shadow-xl mb-6">
-          <div class="card-body">
-            <h2 class="card-title text-2xl">Learn More</h2>
-            <p>For more detailed information, visit the original source:</p>
-            <a
-              href="<%= project.original_source_url %>"
-              target="_blank"
-              class="btn btn-primary mt-4"
-            >
-              Visit Project Drawdown
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Random Quote -->
-        <div class="card bg-base-200 shadow-xl mb-6">
-          <div class="card-body">
-            <h2 class="card-title text-2xl">Inspirational Quote</h2>
-            <div id="quote-container">
-              <p class="italic text-lg mb-2">
-                <span class="loading loading-spinner loading-md"></span> Loading
-                quote...
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Back Button -->
-        <div class="text-center mb-10">
-          <a
-            href="#"
-            onclick="history.back(); return false;"
-            class="btn btn-accent"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Go Back
-          </a>
-        </div>
+        
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Fetch random quote from dummyjson API
-        fetch("https://dummyjson.com/quotes/random")
-          .then((response) => response.json())
-          .then((data) => {
-            const quoteContainer = document.getElementById("quote-container");
-            quoteContainer.innerHTML = `
-            <p class="italic text-lg mb-2">"${data.quote}"</p>
-            <p class="text-right text-sm">— ${data.author}</p>
-          `;
-          })
-          .catch((error) => {
-            const quoteContainer = document.getElementById("quote-container");
-            quoteContainer.innerHTML = `
-            <p class="text-error">Unable to load quote at this time.</p>
-          `;
-            console.error("Error fetching quote:", error);
-          });
-      });
-    </script>
   </body>
 </html>
