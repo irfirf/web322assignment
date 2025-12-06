@@ -1,95 +1,84 @@
 <!DOCTYPE html>
-<html data-theme="corporate">
-  <head>
-    <title>Climate Solutions</title>
-  </head>
-  <body class="min-h-screen bg-base-100 text-base-content">
-    <link rel="stylesheet" href="/css/main.css" />
-    <%- include('partials/navbar') %>
-    <div class="container mx-auto">
-      <!--hero-->
-      <div class="hero bg-base-200 min-h-screen">
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold">Welcome</h1>
-            <p class="py-6">
-              Browse our current collection of modern solutions to help fight
-              Climate Change.
-            </p>
-            <button class="btn btn-primary">Get Started</button>
-          </div>
-        </div>
-      </div>
+<html lang="en" data-theme="dim">
 
-      <div class="grid grid-cols-3 gap-4">
-        <!--cards-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Solutions</title>
+  <link rel="stylesheet" href="/css/main.css" />
 
-        <div class="card bg-base-200 shadow-xl">
-          <figure>
-            <img
-              class="w-full"
-              src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg"
-              alt="Farmland Restoration"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Abandoned Farmland Restoration</h2>
-            <p>
-              Restoration can bring degraded farmland back into productivity and
-              sequester carbon in the process.
-            </p>
-            <div class="card-actions justify-end">
-              <a href="/solutions/projects/1" class="btn btn-accent"
-                >Learn More</a
-              >
-            </div>
-          </div>
-        </div>
+</head>
 
-        <div class="card bg-base-200 shadow-xl">
-          <figure>
-            <img
-              class="w-full"
-              src="https://drawdown.org/sites/default/files/solutions2020/solution_alternativecement02.jpg"
-              alt="Alternative Cement"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Alternative Cement</h2>
-            <p>
-              Conventional cement production is a significant source of carbon
-              dioxide. Reformulation can reduce emissions by millions of metric
-              tons each year.
-            </p>
-            <div class="card-actions justify-end">
-              <a href="/solutions/projects/2" class="btn btn-accent"
-                >Learn More</a
-            </div>
-          </div>
-        </div>
+<body>
 
-        <div class="card bg-base-200 shadow-xl">
-          <figure>
-            <img
-              class="w-full"
-              src="https://drawdown.org/sites/default/files/solutions2020/solution_bicycle_infrastructure.jpg"
-              alt="Bicycle Infrastructure"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Bicycle Infrastructure</h2>
-            <p>
-              Building safe bike lanes reduces emissions and promotes healthy
-              transport.
-            </p>
-            <div class="card-actions justify-end">
-              <a href="/solutions/projects/3" class="btn btn-accent"
-                >Learn More</a
-              >
-            </div>
-          </div>
+  <%- include('partials/navbar') %>
+
+  <div class="container mx-auto">
+
+    <div class="hero bg-base-200 rounded-lg p-6">
+      <div class="hero-content text-center ">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Welcome</h1>
+
+          <p class="py-6">Browse our current collection of modern solutions to help fight Climate Change.</p>
+      
+          <a href="/solutions/projects" class="btn btn-primary">Get Started Now</a>
         </div>
       </div>
     </div>
-  </body>
+
+    <br />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div>
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full" src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg" alt="Abandoned Farmland Restoration" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Abandoned Farmland Restoration</h2>
+            <p>Restoration can bring degraded farmland back into productivity and sequester carbon in the process.</p>
+            <div class="card-actions justify-end py-6">
+              <a href="/solutions/projects/1" class="btn btn-primary">More Information</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div>
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full" src="https://drawdown.org/sites/default/files/solutions2020/solution_alternativecement02.jpg" alt="Alternative Cement" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Alternative Cement</h2>
+            <p>Conventional cement production is a significant source of carbon dioxide. Reformulation can reduce emissions by millions of metric tons each year.</p>
+            <div class="card-actions justify-end py-6">
+              <a href="/solutions/projects/2" class="btn btn-primary">More Information</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div>
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full" src="https://drawdown.org/sites/default/files/solutions2020/solution_bicycle_infrastructure.jpg" alt="Bicycle Infrastructure" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Bicycle Infrastructure</h2>
+            <p>Infrastructure is essential for supporting safe and abundant bicycle use, which curbs emissions by reducing the need for fossil-fuel-dependent transportation.</p>
+            <div class="card-actions justify-end py-6">
+              <a href="/solutions/projects/3" class="btn btn-primary">More Information</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</body>
+
 </html>

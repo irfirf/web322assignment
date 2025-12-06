@@ -1,42 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="corporate">
+<html lang="en" data-theme="dim">
   <head>
-    <title><%= project.title %> - Climate Solutions</title>
-  </head>
-  <body class="min-h-screen bg-base-100 text-base-content">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Solutions</title>
     <link rel="stylesheet" href="/css/main.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        let res = await fetch("https://dummyjson.com/quotes/random");
+        let data = await res.json();
+
+        document.getElementById(
+          "quote"
+        ).innerHTML = `"${data.quote}"<br />- <em>${data.author}</em>`;
+      });
+    </script>
+  </head>
+
+  <body>
     <%- include('partials/navbar') %>
-    <div class="hero bg-base-200 min-h-screen">
-      <div class="hero-content text-center">
-        <div class="max-w-md">
-          <h1 class="text-5xl font-bold">404</h1>
-          <p class="py-6">Unable to find requested project</p>
-              
+
+    <% if (session.user) { %>
+      <div class="container mx-auto p-4">
+        <a href="/solutions/editProject/<%= project.id %>" class="btn btn-success">Edit Project</a>
+      </div>
+    <% } %>
+
+    <div class="container mx-auto p-4">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-lg">
+            <h1 class="text-5xl font-bold"><%= project.title %></h1>
+
+            <p class="py-6">
+              Below, you will find detailed information about the project: <%=
+              project.title %>
             </p>
           </div>
         </div>
       </div>
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-8">
+
+      <br />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
           <img
+            class="w-full rounded-lg"
             src="<%= project.feature_img_url %>"
-            alt="<%= project.title %>"
-            class="rounded-2xl shadow-lg w-full"
+            alt=" Set Image"
           />
         </div>
-        <div class="card bg-base-200 shadow-xl mb-6">
-          <div class="card-body">
-            <h2 class="card-title text-2xl">Introduction</h2>
-            <p class="leading-relaxed"><%= project.intro_short %></p>
-          </div>
+        <div class="prose">
+          <p>
+            <%= project.intro_short %> <br /><br />
+            <span class="font-bold">Impact: </span><br /><br />
+            <%= project.impact %> <br /><br />
+
+            <span class="font-bold">More Information: </span>
+            <a href="<%= project.original_source_url %>" target="_blank"
+              ><%= project.original_source_url %></a
+            ><br /><br />
+
+            <span id="quote"></span>
+            <br /><br />
+            <a
+              class="btn btn-primary btn-sm"
+              href="#"
+              onclick="history.back(); return false;"
+              >RETURN</a
+            ><br /><br />
+          </p>
         </div>
-        <div class="card bg-base-200 shadow-xl mb-6">
-          <div class="card-body">
-            <h2 class="card-title text-2xl">Impact</h2>
-            <p class="leading-relaxed"><%= project.impact %></p>
-          </div>
-        </div>
-        
       </div>
     </div>
   </body>

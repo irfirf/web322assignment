@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="corporate">
-  <head>
-    <title>About Me</title>
-  </head>
-  <body class="min-h-screen bg-base-100 text-base-content">
-    <link rel="stylesheet" href="/css/main.css" />
-    <%- include('partials/navbar') %>
-    <div class="container mx-auto">
-      <!--hero-->
-      <div class="hero bg-base-200 min-h-screen">
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold">About</h1>
-            <p class="py-6">All about me:</p>
-          </div>
-        </div>
-      </div>
+<html lang="en" data-theme="dim">
 
-      <!-- 2 Column Grid -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="border-2">
-          <h2 class="text-2xl font-semibold mb-4">I'm Irfan Farid</h2>
-          <p class="mb-4">I'm a student at Seneca's CPA program</p>
-        </div>
-        <div class="border-2">
-          <img
-            class="w-full"
-            src="https://preview.redd.it/the-original-image-of-the-monkey-thinking-meme-v0-ea1hkdjnx9af1.jpeg?width=1080&crop=smart&auto=webp&s=5fb2b05369bfbffd94d6009a679a9a5fe5e4223f"
-            alt="Farmland Restoration"
-          />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Solutions</title>
+  <link rel="stylesheet" href="/css/main.css" />
+
+</head>
+
+<body>
+
+  <%- include('partials/navbar') %>
+
+  <div class="container mx-auto">
+
+    <div class="hero bg-base-200 rounded-lg p-6">
+      <div class="hero-content text-center ">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">About</h1>
+
+          <p class="py-6">Everything you want to know about me - the designer &amp; developer.</p>
+
         </div>
       </div>
     </div>
-  </body>
+
+    <br />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <img class="w-full rounded-lg"
+          src="/images/profile-pic.jpg"
+          alt="profile" />
+
+      </div>
+      <div class="prose">
+
+        <p>My name is John Smith and I'm currently studying at Seneca Polytechnic.</p>
+
+        <p>Donec sollicitudin molestie tortor, vel feugiat nulla maximus quis. Suspendisse ut sapien id mauris
+          sollicitudin commodo. Quisque semper, ligula et tincidunt dapibus, nisi ante fermentum lectus, nec molestie
+          sem eros vel neque. Duis sit amet ligula eu ligula consectetur blandit sed at mi. Sed ac odio aliquet,
+          vestibulum justo eget, volutpat eros. Mauris a dictum erat. Vivamus sodales egestas tempus. Duis pulvinar nibh
+          enim, vel gravida nunc egestas id. Duis magna ante, posuere id luctus id, mattis at ipsum. Nullam sit amet
+          magna et dui varius tristique ac id nisl. Pellentesque est dolor, luctus vitae dictum ut, hendrerit lacinia
+          lorem. Nullam a pharetra tortor.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
 </html>

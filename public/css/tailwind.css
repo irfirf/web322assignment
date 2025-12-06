@@ -1,8 +1,5 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @plugin "daisyui" {
-  themes: corporate;
+  themes: dim;
 }
