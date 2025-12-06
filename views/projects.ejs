@@ -14,13 +14,12 @@
   <%- include('partials/navbar') %>
 
   <div class="container mx-auto">
-    <% if (session.user) { %>
-      <a href="/solutions/addProject" class="btn btn-success">Add New Project</a>
-    <% } %>
-
     <div class="hero bg-base-200 rounded-lg p-6">
       <div class="hero-content text-center ">
         <div class="max-w-md">
+          <% if (session.user) { %>
+            <a href="/solutions/addProject" class="btn btn-success">Add New Project</a>
+          <% } %>
           <h1 class="text-5xl font-bold">Projects</h1>
   
             <p class="py-6">Browse the current list of Projects in our database. Click the theme to filter by sectors such as:
