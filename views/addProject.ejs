@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Project</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="container mx-auto p-6">
+      <h1 class="text-5xl font-bold text-center">Add Project</h1>
+
+      <form
+        method="POST"
+        action="/solutions/addProject"
+        class="max-w-lg mx-auto mt-6"
+      >
+        <div class="mb-4">
+          <label class="block mb-2">Title</label>
+          <input type="text" name="title" class="input w-full" required />
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-2">Feature Image URL</label>
+          <input
+            type="url"
+            name="feature_img_url"
+            class="input w-full"
+            required
+          />
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-2">Sector</label>
+          <select name="sector_id" class="input w-full" required>
+            <option value="1">Land Sinks</option>
+            <option value="2">Industry</option>
+            <option value="3">Transportation</option>
+            <option value="4">Electricity</option>
+            <option value="5">Food, Agriculture, and Land Use</option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-2">Introduction (Short)</label>
+          <textarea
+            name="intro_short"
+            class="input w-full"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-2">Summary (Short)</label>
+          <textarea
+            name="summary_short"
+            class="input w-full"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-2">Impact</label>
+          <textarea
+            name="impact"
+            class="input w-full"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-2">Original Source URL</label>
+          <input
+            type="url"
+            name="original_source_url"
+            class="input w-full"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full">
+          Add Project
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
