@@ -2,15 +2,6 @@
   <div class="flex-1">
     <a class="btn btn-ghost normal-case text-xl" href="/">Climate Solutions</a>
   </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-1">
-      <% if (!session.user) { %>
-      <li><a href="/login">Log In</a></li>
-      <% } %> <% if (session.user) { %>
-      <li><a href="/logout">Log Out (<%= session.user.userName %>)</a></li>
-      <% } %>
-    </ul>
-  </div>
   <div class="dropdown">
     <label tabindex="0" class="btn btn-ghost sm:hidden">
       <svg
@@ -61,6 +52,11 @@
           </ul>
         </details>
       </li>
+      <% if (!session.user) { %>
+      <li><a href="/login">Log In</a></li>
+      <% } %> <% if (session.user) { %>
+      <li><a href="/logout">Log Out (<%= session.user.userName %>)</a></li>
+      <% } %>
     </ul>
   </div>
 
@@ -95,6 +91,11 @@
           </ul>
         </details>
       </li>
+      <% if (!session.user) { %>
+      <li><a href="/login">Log In</a></li>
+      <% } %> <% if (session.user) { %>
+      <li><a href="/logout">Log Out (<%= session.user.userName %>)</a></li>
+      <% } %>
     </ul>
   </div>
 </div>
