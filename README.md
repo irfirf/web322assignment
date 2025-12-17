@@ -85,7 +85,7 @@ This project demonstrates:
 
 **Course:** WEB322 - Web Programming Tools and Frameworks  
 **Institution:** Seneca Polytechnic  
-**Semester:** Fall 2024
+**Semester:** Winter 2026
 
 ## License
 
